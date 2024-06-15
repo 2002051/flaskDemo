@@ -2,11 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>首页</title>
+    <title>测试页</title>
 </head>
 <body>
-<h1>首页</h1>
-name:{{ name }}
+<div>
+    年龄是{{ age }}
+</div>
+<div>
+    身份是
+    {% if age < 10 %}
+        儿童
+    {% elif age < 18 and age>=10 %}
+        少年
+    {% elif age >= 18 %}
+        成年人
+    {% endif %}
+
+</div>
+
+{% for foo in [11,22,33,44,55,66] %}
+    <div>{{ loop.index }}:{{ foo }}</div>
+
+{% endfor %}
 
 </body>
 </html>

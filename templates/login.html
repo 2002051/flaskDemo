@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% import "forms.html"as forms %}
+{% set pop="余天王" %}{#直接全局设置一个变量#}
+
+{% block title %}
+    <dl>
+        <dt>用户名</dt>
+        <dd>{{ forms.input("1","password") }}</dd>
+    </dl>
+    <div>{{ pop }}</div>
+    {#    使用上下文模板   #}
+    {% with  cb="余大王" %}
+        {{ cb }}
+    {% endwith %}
+{#jinja2一些已经内置的全局变量#}
+{{ request.query_string }}
+{% endblock %}
